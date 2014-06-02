@@ -1,0 +1,26 @@
+body, html {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.grid {
+  height: 100%;
+}
+
+.square {
+  width: 33.33%;
+  height: 100%;
+  outline: black solid 1px;
+  float: left;
+}
+
+.row {
+  height: 33.33%;
+}
+
+.row:after {
+  content: " ";
+  clear: both;
+  display: block;
+}
