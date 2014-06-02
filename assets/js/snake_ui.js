@@ -33,7 +33,7 @@
     this.intervalHandle = setInterval(function () {
       view.step();
       view.renderBoard();
-    }, 80);
+    }, 50);
   };
 
   View.prototype.renderBoard = function () {
