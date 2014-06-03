@@ -7,32 +7,38 @@
 
   View.prototype.start = function(){
     this.board = new SnakeGame.Board();
+    SnakeGame.hasTurn = true;
 
     var board = this.board;
     $('body').keydown(function(event){
       var keycode = event.which;
       var snake = board.snake;
 
-      switch (keycode){
-      case 37:
-        snake.turn("W");
-        break;
-      case 38:
-        snake.turn("N");
-        break;
-      case 39:
-        snake.turn("E");
-        break;
-      case 40:
-        snake.turn("S");
-        break;
+      if (SnakeGame.hasTurn) {
+        switch (keycode){
+        case 37:
+          snake.turn("W");
+          break;
+        case 38:
+          snake.turn("N");
+          break;
+        case 39:
+          snake.turn("E");
+          break;
+        case 40:
+          snake.turn("S");
+          break;
+        }
       }
+
+      SnakeGame.hasTurn = false;
     });
 
     var view = this;
     this.intervalHandle = setInterval(function () {
       view.step();
       view.renderBoard();
+      SnakeGame.hasTurn = true;
     }, 50);
   };
 
