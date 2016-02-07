@@ -1,0 +1,12 @@
+body {
+  padding: 30px 20px;
+}
+
+body > * {
+  font-family: 'Noto Serif', serif;
+}
+
+.nav-title {
+  font-size: 24px;
+  text-align: center;
+}
